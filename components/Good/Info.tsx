@@ -38,11 +38,11 @@ function Method({ icon }: { icon: string }) {
 
 export default function Info({ id }: { id: string }) {
     return (
-        <div className='w-full mx-20 sm:mx-80 my-20 flex flex-col sm:flex-row gap-20'>
+        <div className='w-full px-20 sm:px-80 my-0 flex flex-col sm:flex-row gap-20'>
             <div className='w-[389px] h-[253px] rounded-3xl relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent'>
-                <img className='w-full h-full' src={`images/regions/${id}.png`} alt="" />
+                <img className='w-full h-full rounded-3xl' src={`images/regions/${id}.png`} alt="" />
             </div>
-            <div className='flex flex-col gap-20'>
+            <div className='w-full flex flex-col gap-20'>
                 <div className='text-28 font-semibold leading-120'>eSIM для Европы</div>
                 <div>
                     <div className='flex items-end'>
