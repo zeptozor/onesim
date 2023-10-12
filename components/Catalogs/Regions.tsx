@@ -2,17 +2,42 @@ import Region from "../Region"
 
 export default function Regions() {
     const regions = [
-        <Region region='europe' categories={['Региональные']} forRegion='Европы' price='$3.90 - $29.90' width='100%' key={0} />,
-        <Region region='usa' categories={['Локальные']} forRegion='США' price='$3.90 - $29.90' width='100%' key={43} />,
-        <Region region='france' categories={['Европейские', 'Локальные']} forRegion='Франции' price='$3.90 - $29.90' width='100%' key={1} />,
-        <Region region='spain' categories={['Европейские', 'Локальные']} forRegion='Испании' price='$3.90 - $29.90' width='100%' key={2} />,
-        <Region region='middle east' categories={['Региональные']} forRegion='Ближнего востока' price='$3.90 - $29.90' width='100%' key={3} />,
+        {
+            region: 'europe',
+            categories: ['regional'],
+            forRegion: 'Европы',
+            price: '$3.90 - $29.90'
+        },
+        {
+            region: 'usa',
+            categories: ['local'],
+            forRegion: 'США',
+            price: '$3.90 - $29.90'
+        },
+        {
+            region: 'france',
+            categories: ['european', 'local'],
+            forRegion: 'Франции',
+            price: '$3.90 - $29.90'
+        },
+        {
+            region: 'spain',
+            categories: ['european', 'local'],
+            forRegion: 'Испании',
+            price: '$3.90 - $29.90'
+        },
+        {
+            region: 'middle east',
+            categories: ['regional'],
+            forRegion: 'Ближнего востока',
+            price: '$3.90 - $29.90'
+        }
     ]
 
     return (
-        <div className='w-full px-20 sm:px-80 py-40 grid grid-cols-1 sm:grid-cols-4 gap-40 sm:gap-20'>
+        <div className='w-full px-20 sm:px-40 md:px-80 py-40 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-40 sm:gap-20'>
             {
-                regions.map(i => i)
+                regions.map((i, index) => <Region key={index} region={i.region} forRegion={i.forRegion} price={i.price} categories={i.categories} width='100%' />)
             }
         </div>
     )

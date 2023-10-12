@@ -14,7 +14,7 @@ function Advantage({ icon, heading, description }: { icon: 'compass' | 'wifi' | 
 
 export default function Advantages() {
     return (
-        <div className='w-full h-full relative bg-bg -z-20 px-80 py-40'>
+        <div className='w-full h-full relative bg-bg -z-20 px-20 sm:px-40 md:px-80 py-40'>
             <div className='w-[363px] h-[44px] absolute -z-10 top-[20px] left-[20px]'>
                 <img src='images/wind.svg' />
             </div>

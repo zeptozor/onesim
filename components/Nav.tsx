@@ -5,8 +5,8 @@ import Person from './svg/Person'
 
 export default function Nav() {
     return (
-        <div className='w-full flex sm:gap-40 px-20 sm:px-80 py-20 items-center justify-center'>
-            <div className='hidden sm:flex gap-40 justify-center items-center'>
+        <div className='w-full flex md:gap-40 px-20 sm:px-40 md:px-80 py-20 items-center justify-center'>
+            <div className='hidden md:flex gap-40 justify-center items-center'>
                 <Link className='text-32 font-semibold' href='/'>onesim</Link>
                 <div className='flex gap-20 justify-center items-center'>
                     <div className='flex gap-10 items-center justify-center cursor-pointer'>
@@ -19,13 +19,13 @@ export default function Nav() {
                     <div className='font-semibold text-15'>FAQ</div>
                 </div>
             </div>
-            <div className='flex py-[11px] w-full sm:w-auto min-w-[360px] px-20 gap-10 items-center justify-between bg-bg rounded'>
+            <div className='flex py-[11px] w-full md:w-auto min-w-[360px] px-20 gap-10 items-center justify-between bg-bg rounded'>
                 <input className='w-full text-[14px] font-semibold placeholder-black bg-inherit outline-none' placeholder='Ищите нужную вам страну и регион' />
                 <div className='w-[18px] h-[18px]'>
                     <Loupe />
                 </div>
             </div>
-            <div className='hidden sm:flex gap-20 items-center content-center'>
+            <div className='hidden md:flex gap-20 items-center content-center'>
                 <div className='flex gap-20 items-center cursor-pointer'>
                     <div className='w-[16px] h-[18px]'>
                         <Person />

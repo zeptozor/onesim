@@ -38,22 +38,34 @@ function Method({ icon }: { icon: string }) {
 
 export default function Info({ id }: { id: string }) {
     return (
-        <div className='w-full px-20 sm:px-80 my-0 flex flex-col sm:flex-row gap-20'>
-            <div className='w-[389px] h-[253px] rounded-3xl relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent'>
-                <img className='w-full h-full rounded-3xl' src={`images/regions/${id}.png`} alt="" />
+        <div className='w-full px-20 sm:px-40 md:px-80 flex flex-col md:flex-row gap-20'>
+            <div className='block sm:hidden md:block w-full sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
+                <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
             </div>
-            <div className='w-full flex flex-col gap-20'>
-                <div className='text-28 font-semibold leading-120'>eSIM для Европы</div>
-                <div>
-                    <div className='flex items-end'>
-                        <div className='text-green text-36 font-semibold leading-120 mx-[5px]'>$3.90</div>
-                        <div className='font-semibold leading-120'>USD</div>
+            <div className='flex flex-col gap-20'>
+                <div className='flex gap-20'>
+                    <div className='hidden sm:block md:hidden sm:w-[389px] w-full sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
+                        <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
                     </div>
-                    <div className='text-red font-semibold leading-120 line-through'>$4.90</div>
-                    <Rate rate={4} />
+                    <div className='flex flex-col gap-20'>
+                        <div className='text-28 font-semibold leading-120'>eSIM для Европы</div>
+                        <div>
+                            <div className='flex items-end'>
+                                <div className='text-green text-36 font-semibold leading-120 mx-[5px]'>$3.90</div>
+                                <div className='font-semibold leading-120'>USD</div>
+                            </div>
+                            <div className='text-red font-semibold leading-120 line-through'>$4.90</div>
+                            <Rate rate={4} />
+                        </div>
+                        <div className='hidden sm:flex md:hidden w-auto p-[5px] gap-10 items-center flex-wrap rounded'>
+                            <Button active={true} text='Особенности' />
+                            <Button active={false} text='Описание' />
+                            <Button active={false} text='Операторы' />
+                        </div>
+                    </div>
                 </div>
                 <div className='w-full h-[2px] mt-20 bg-[#E1E5EC]'></div>
-                <div className='flex w-[376px] p-[5px] justify-between items-center flex-wrap rounded bg-bg'>
+                <div className='flex sm:hidden md:flex w-full md:w-1/2 p-[5px] justify-between items-center flex-wrap rounded bg-bg'>
                     <Button active={true} text='Особенности' />
                     <Button active={false} text='Описание' />
                     <Button active={false} text='Операторы' />
@@ -102,7 +114,7 @@ export default function Info({ id }: { id: string }) {
                 <div className='py-20 flex flex-col gap-20'>
                     <div className='flex w-full p-20 flex-col gap-10 rounded bg-bg'>
                         <div className='flex gap-20 justify-between items-start'>
-                            <div className='text-28 w-[233px] font-semibold leading-120'>Выбрите тарифный план</div>
+                            <div className='text-28 font-semibold leading-120'>Выбрите тарифный план</div>
                             <div className='flex p-[12px] justify-center items-center gap-10 rounded border-2 border-[#E1E5EC]'>
                                 <div className='font-semibold'>USD ($)</div>
                                 <div className='w-[6px] h-[3px]'>
@@ -130,9 +142,9 @@ export default function Info({ id }: { id: string }) {
                         <Method icon='googlepay' />
                         <Method icon='applepay' />
                     </div>
-                    <div className='hidden w-[797px] sm:flex p-20 flex-wrap gap-y-20 rounded bg-bg'>
+                    <div className='hidden w-full sm:flex p-20 flex-wrap gap-y-20 rounded bg-bg'>
                         <div className='w-full flex justify-between items-start'>
-                            <div className='w-[266px] h-[62px] flex flex-col'>
+                            <div className='w-full h-[62px] flex flex-col'>
                                 <div className='text-gray font-semibold leading-120'>Итого</div>
                                 <div className='text-green text-36 font-semibold leading-120 flex items-end gap-10'>
                                     $3.90
@@ -148,7 +160,7 @@ export default function Info({ id }: { id: string }) {
                                 <div className='font-semibold text-white'>Купить</div>
                             </div>
                         </div>
-                        <div className='flex w-full h-[43px] justify-between gap-10'>
+                        <div className='sm:grid grid-cols-5 md:flex w-full flex-wrap justify-between gap-5'>
                             <Method icon='stripe' />
                             <Method icon='visa' />
                             <Method icon='mastercard' />

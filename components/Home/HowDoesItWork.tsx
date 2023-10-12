@@ -13,7 +13,7 @@ interface StepProps {
 
 function Step({ heading, description, justify, additionally, illustration, width, top }: StepProps) {
     return (
-        <div className={`w-full pl-[32px] sm:px-[200px] sm:absolute sm:ml-0 flex sm:flex-col items-end ${justify == 'start' ? 'sm:items-start' : 'sm:items-end'} gap-20 `} style={{ marginTop: top.mobile, top: top.desktop }}>
+        <div className={`w-full pl-[32px] sm:px-40 md:px-80 sm:absolute sm:ml-0 flex sm:flex-col items-end ${justify == 'start' ? 'sm:items-start' : 'sm:items-end'} gap-20 `} style={{ marginTop: top.mobile, top: top.desktop }}>
             <div className='w-[230px] sm:w-[280px] flex flex-col gap-10 text-start'>
                 <div className='text-20 sm:text-28 font-semibold leading-120'>{heading}</div>
                 <div className='text-gray leading-120'>{description}</div>
@@ -69,14 +69,14 @@ export default function HowDoesItWork() {
         }
     ]
     return (
-        <div className='w-full flex flex-col sm:text-center gap-20 px-20 sm:px-80 py-40'>
+        <div className='w-full flex flex-col sm:text-center gap-20 px-20 sm:px-40 md:px-80 py-40'>
             <div className='text-28 sm:text-36 font-semibold leading-120'>Как работает международная eSIM</div>
             <div className='sm:flex sm:mx-auto gap-5 font-semibold leading-120'>
                 Перед покупкой убедитесь, что ваш смартфон
                 <div className='font-semibold leading-120 text-blue'>поддерживает eSIM</div>
             </div>
             <div className='w-full'>
-                <div className='w-full relative sm:h-[1320px]'>
+                <div className='w-full max-w-[400px] sm:max-w-none mx-auto relative sm:h-[1320px]'>
                     <div className='w-0 flex flex-col items-center border border-gray sm:left-1/2 absolute top-[60px] sm:top-[35px] z-10'>
                         <div className='w-[12px] h-[12px] mb-[130px] sm:mb-[300px] bg-orange rounded-full'></div>
                         <div className='w-[12px] h-[12px] mb-[255px] sm:mb-[350px] bg-orange rounded-full'></div>
@@ -87,7 +87,7 @@ export default function HowDoesItWork() {
                         steps.map((step, index) => <Step key={index} heading={step.heading} description={step.description} justify={(index % 2 == 0 ? 'end' : 'start')} additionally={step.additionally} illustration={step.illustration} width={step.width} top={step.top} />)
                     }
                 </div>
-                <div className='w-[184px] mx-auto mt-40 flex py-[12px] px-[15px] justify-center items-center rounded bg-orange text-white'>Каталог eSIM</div>
+                <div className='md:w-[184px] sm:w-1/2 w-full mx-auto mt-40 flex py-[12px] px-[15px] justify-center items-center rounded bg-orange text-white'>Каталог eSIM</div>
             </div>
         </div>
     )

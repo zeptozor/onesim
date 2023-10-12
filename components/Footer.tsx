@@ -27,7 +27,7 @@ export default function Footer() {
                     <div className='leading-120'>Связаться с нами</div>
                 </div>
             </div>
-            <div className='w-full flex flex-col sm:flex-row px-20 py-20 sm:py-10 sm:px-80 gap-20 sm:gap-[676px]'>
+            <div className='w-full flex flex-col sm:flex-row px-20 py-20 sm:py-10 sm:px-80 gap-20 sm:justify-between'>
                 <div className='leading-120'>© 2022 Onesim. Все права защищены.</div>
                 <div className='w-[257px] h-[16px] flex gap-[4px]'>
                     <Method icon='stripe' />

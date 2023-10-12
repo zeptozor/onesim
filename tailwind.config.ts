@@ -53,6 +53,10 @@ const config: Config = {
       borderRadius: {
         DEFAULT: '10px',
       },
+      screens: {
+        'sm': '768px',
+        'md': '1024px'
+      }
     },
     lineHeight: {
       100: '100%',

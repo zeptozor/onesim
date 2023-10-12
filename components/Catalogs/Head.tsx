@@ -3,9 +3,7 @@ import Loupe from "../svg/Loupe";
 
 export default function Head() {
     return (
-        <div className='w-full relative px-20 sm:px-0 sm:pt-40 mb-40'>
-            <img className='hidden sm:block absolute left-0 top-0 -z-10' src='images/catalogs/desktop.svg' alt='hello' />
-            <img className='sm:hidden absolute left-0 top-0 -z-10' src='images/catalogs/mobile.svg' alt='world' />
+        <div className='w-full relative px-20 sm:px-40 md:px-80 sm:pt-40 mb-40 pb-40 bg-cover bg-[url("../public/images/catalogs/mobile.svg")] sm:bg-[url("../public/images/catalogs/desktop.svg")]'>
             <div className='w-full sm:w-[600px] mx-auto flex flex-col gap-40'>
                 <div className='flex flex-col gap-20'>
                     <div className='sm:hidden text-32 font-extrabold'>onesim</div>

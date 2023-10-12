@@ -16,7 +16,7 @@ function Step({ icon, heading, description, additionally }: { icon: string, head
 
 export default function HowDoesItWork({ region }: { region: string }) {
     return (
-        <div className='px-20 sm:px-80 py-40'>
+        <div className='px-20 sm:px-40 md:px-80 py-40'>
             <div className='w-full sm:h-auto flex flex-col gap-40'>
                 <div className='w-full flex flex-col gap-20'>
                     <div className='text-center text-28 font-semibold leading-120'>Как работает eSIM для Европы</div>
@@ -25,7 +25,7 @@ export default function HowDoesItWork({ region }: { region: string }) {
                         <div className='text-blue font-semibold leading-120'>смартфон поддерживает eSIM</div>
                     </div>
                 </div>
-                <div className='w-full flex flex-col sm:flex-row gap-y-20 justify-between'>
+                <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 justify-between'>
                     <Step icon='mail' heading='Получите QR-код по электронной почте' description='Вы получите QR-код и инструкции по активации сразу после оплаты' />
                     <Step icon='qr' heading='Отсканируйте код' description='Отсканируйте код с помощью камеры телефона и запустите активацию пакета' additionally='Посмотреть список поддерживаемых смартфонов' />
                     <Step icon='wifi' heading='Назначьте сотовые данные' description='Назначьте сотовые данные с оригинального номера на eSIM' />

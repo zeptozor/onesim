@@ -21,7 +21,7 @@ function Review({ name, rate, description }: { name: string, rate: number, descr
 
 export default function Reviews() {
     return (
-        <div className='w-full px-20 sm:px-80 mb-40'>
+        <div className='w-full px-20 sm:px-40 md:px-80 mb-40'>
             <div className='text-28 font-semibold leading-120 mb-20'>Сотни счастливых клиентов eSIM</div>
             <div className='w-full overflow-scroll flex gap-20'>
                 <Review name='Никита Григориевич' rate={4} description='Я купил электронную туристическую симкарту на этом сайте перед поездкой в Испанию. Я был очень доволен качеством связи и скоростью интернета. Симкарта работала без проблем во всех городах, которые я посетил. Я мог звонить, отправлять сообщения и пользоваться онлайн-сервисами без ограничений.' />

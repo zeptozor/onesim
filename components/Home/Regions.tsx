@@ -37,7 +37,7 @@ export default function Regions() {
     ]
     return (
         <div className='w-full py-[40px]'>
-            <div className='px-20 sm:px-80'>
+            <div className='px-20 sm:px-40 md:px-80'>
                 <div className='text-28 sm:text-36 font-semibold leading-120'>Куда вы отправитесь в следующий раз?</div>
                 <div className='flex gap-10 sm:gap-20 sm:p-[10px] mt-20 flex-wrap sm:inline-flex sm:justify-center sm:items-center sm:rounded sm:bg-bg'>
                     <Category active={true} category='Самые популярные' />
@@ -45,7 +45,6 @@ export default function Regions() {
                     <Category active={false} category='Локальные eSIMs' />
                 </div>
             </div>
-            <div className='sm:hidden h-[20px]'></div>
             <Carousel items={regions.map(i => <Region key={i.region} region={i.region} categories={i.categories} forRegion={i.forRegion} price={i.price} />)} />
         </div>
     )
