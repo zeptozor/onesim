@@ -33,7 +33,7 @@ function Choise({ variants }: { variants: variant[] }) {
     )
 }
 
-export default function Profile() {
+export function ContactData({ width }: { width: string }) {
     let countries: variant[] = [
         {
             name: 'Kazakhstan',
@@ -42,8 +42,7 @@ export default function Profile() {
         }
     ]
     return (
-        <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
-            <div className='text-20 font-semibold'>Личная информация</div>
+        <div className='flex flex-col gap-10' style={{ width }}>
             <div className='flex flex-col gap-10 w-full'>
                 <div className='flex gap-10'>
                     <Field active={true} label='Имя' value='Шыңғысхан' />
@@ -63,6 +62,15 @@ export default function Profile() {
                 <Choise variants={[{ name: 'Казахстан', id: 'default' }]} />
                 <Choise variants={[{ name: 'Ваш смартфон', id: 'default' }]} />
             </div>
+        </div>
+    )
+}
+
+export default function Profile() {
+    return (
+        <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
+            <div className='text-20 font-semibold'>Личная информация</div>
+            <ContactData width='auto' />
             <div className='w-full p-[12px] flex items-center justify-center rounded bg-[#E1E5EC] text-gray font-semibold'>Сохранить</div>
         </div>
     )

@@ -60,7 +60,7 @@ export default function MyESIMS({ esims }: { esims: boolean | 'activation' | 'ac
         }
     ]
     if (esims == 'plan') {
-        return <div className='relative w-full h-screen flex flex-col gap-20'>
+        return <div className='relative w-full flex flex-col gap-20'>
             <div className='z-10 absolute bg-gray bg-opacity-50 w-full h-full flex justify-end'>
                 <div className='h-full flex flex-col gap-20 p-20 w-[538px] bg-bg'>
                     <div className='w-full flex justify-between'>

@@ -13,11 +13,25 @@ function Method({ name, expires }: { name: string, expires: string }) {
     )
 }
 
-function Field({ active, label, value }: { active: boolean, label: string, value?: string }) {
+export function Field({ active, label, value }: { active: boolean, label: string, value?: string }) {
     return (
         <div className={`w-full rounded border-2 ${active ? 'border-orange' : 'border-[#E1E5EC]'} p-[12px] relative flex`}>
             <input className='w-full h-full outline-none peer text-[14px] bg-inherit' placeholder='' />
             <label className='absolute pointer-events-none text-15 top-auto peer-focus:text-[10px] peer-focus:top-[3px] peer-[&:not(:placeholder-shown)]:top-[3px] peer-[&:not(:placeholder-shown)]:text-[10px]'>{label}</label>
+        </div>
+    )
+}
+
+export function Payment() {
+    return (
+        <div className='w-full flex flex-col p-20 gap-20 bg-bg rounded'>
+            <div className='font-semibold text-20'>Новая банковская карта</div>
+            <Field active={false} label='Номер карты' value='7461 2412 9481 2456' />
+            <div className='flex gap-20'>
+                <Field active={false} label='Дата окончания действия' value='02/24' />
+                <Field active={false} label='CVC' value='...' />
+            </div>
+            <div className='w-full flex items-center justify-center p-[12px] font-semibold rounded bg-orange text-white'>Добавить</div>
         </div>
     )
 }
@@ -43,15 +57,7 @@ export default function PaymentMethods() {
                     <Arrow />
                     <div>Назад</div>
                 </div>
-                <div className='w-full flex flex-col p-20 gap-20 bg-bg rounded'>
-                    <div className='font-semibold text-20'>Новая банковская карта</div>
-                    <Field active={false} label='Номер карты' value='7461 2412 9481 2456' />
-                    <div className='flex gap-20'>
-                        <Field active={false} label='Дата окончания действия' value='02/24' />
-                        <Field active={false} label='CVC' value='...' />
-                    </div>
-                    <div className='w-full flex items-center justify-center p-[12px] font-semibold rounded bg-orange text-white'>Добавить</div>
-                </div>
+                <Payment />
             </div>
         </div>
     )
