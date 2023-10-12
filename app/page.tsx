@@ -9,10 +9,11 @@ import Regions from "@/components/Home/Regions";
 import Nav from "@/components/Nav";
 import Questions from "@/components/Questions";
 import WhyUs from "@/components/WhyUs";
+import Wrapper from "@/components/Wrapper";
 
 export default function Home() {
   return (
-    <>
+    <Wrapper>
       <Nav />
       <Head />
       <Regions />
@@ -24,6 +25,6 @@ export default function Home() {
       <Questions />
       <Feedback />
       <Footer />
-    </>
+    </Wrapper>
   )
 }

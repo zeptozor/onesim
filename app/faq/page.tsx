@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer"
 import Feedback from "@/components/Home/Feedback"
 import Nav from "@/components/Nav"
+import Wrapper from "@/components/Wrapper"
 function Question({ question, answer, active }: { question: string, answer: string, active: boolean }) {
     return (
         <div className='w-full p-20 flex flex-col gap-20 sm:gap-20 rounded bg-bg'>
@@ -32,7 +33,7 @@ function QuestionsList() {
 
 export default function FAQ() {
     return (
-        <>
+        <Wrapper>
             <Nav />
             <div className='w-full px-20 sm:px-80 py-40'>
                 <div className='flex sm:mx-auto w-full sm:w-[593px] sm:justify-center gap-y-20 gap-x-10 flex-wrap'>
@@ -56,6 +57,6 @@ export default function FAQ() {
             </div>
             <Feedback />
             <Footer />
-        </>
+        </Wrapper>
     )
 }

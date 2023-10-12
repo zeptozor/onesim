@@ -8,10 +8,11 @@ import Feedback from "@/components/Home/Feedback";
 import Nav from "@/components/Nav";
 import Questions from "@/components/Questions";
 import WhyUs from "@/components/WhyUs";
+import Wrapper from "@/components/Wrapper";
 
 export default function Good() {
     return (
-        <>
+        <Wrapper>
             <Nav />
             <Breadcrump crumps={['Главная', 'Самые популярные', 'Региональные eSIM', 'eSIM для Европы']} />
             <Info id='europe' />
@@ -22,6 +23,6 @@ export default function Good() {
             <Feedback />
             <Reviews />
             <Footer />
-        </>
+        </Wrapper>
     )
 }

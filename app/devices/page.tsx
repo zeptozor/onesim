@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
+import Wrapper from "@/components/Wrapper";
 import Loupe from "@/components/svg/Loupe";
 
 function Phone({ model, active }: { model: string, active: boolean }) {
@@ -20,7 +21,7 @@ function HHH({ name }: { name: string }) {
 
 export default function Devices() {
     return (
-        <>
+        <Wrapper>
             <Nav />
             <div className='w-full min-h-screen flex flex-col items-center justify-center'>
                 <div className='flex flex-col gap-20 w-1/2'>
@@ -68,6 +69,6 @@ export default function Devices() {
                 </div>                
             </div>
             <Footer />
-        </>
+        </Wrapper>
     )
 }

@@ -6,10 +6,11 @@ import Profile from "@/components/Cabinet/Profile";
 import Sidebar from "@/components/Cabinet/Sidebar";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
+import Wrapper from "@/components/Wrapper";
 
 export default function Caabinet() {
     return (
-        <>
+        <Wrapper>
             <Nav />
             <Breadcrump crumps={['Главная', 'Личный  кабинет']} />
             <div className='w-full px-20 sm:px-80 flex gap-20 mt-40 mb-40'>
@@ -50,6 +51,6 @@ export default function Caabinet() {
                 <MyOrders orders={true} />
             </div>
             <Footer />
-        </>
+        </Wrapper>
     )
 }
