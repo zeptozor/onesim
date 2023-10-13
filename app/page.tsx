@@ -6,6 +6,7 @@ import HowDoesItWork from "@/components/Home/HowDoesItWork";
 import Offers from "@/components/Home/Offers";
 import PaymentMethods from "@/components/Home/PaymentMethods";
 import Regions from "@/components/Home/Regions";
+import MobileMenu from "@/components/MobileMenu";
 import Nav from "@/components/Nav";
 import Questions from "@/components/Questions";
 import WhyUs from "@/components/WhyUs";
@@ -13,7 +14,7 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Home() {
   return (
-    <div>
+    <div className='pb-[50px]'>
       <Wrapper>
         <Nav />
       </Wrapper>
@@ -47,6 +48,7 @@ export default function Home() {
       <Wrapper maxw='none'>
         <Footer />
       </Wrapper>
+      <MobileMenu />
     </div>
   )
 }
