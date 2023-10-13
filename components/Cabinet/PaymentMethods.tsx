@@ -2,10 +2,10 @@ import Arrow from "../svg/Arrow"
 
 function Method({ name, expires }: { name: string, expires: string }) {
     return (
-        <div className='w-full h-[120px] gap-10 p-20 flex flex-col rounded bg-bg relative'>
+        <div className='w-full gap-10 p-20 flex flex-col rounded bg-bg relative'>
             <img className='absolute top-[20px] right-[20px] w-[14px]' src='images/icons/threedots.svg' alt='...' />
             <div className='font-semibold leading-150'>{name}</div>
-            <div>
+            <div className='flex sm:flex-col justify-between'>
                 <div className='text-orange font-semibold leading-150'>Дата окончания</div>
                 <div className='leading-150'>{expires}</div>
             </div>
@@ -44,16 +44,16 @@ export default function PaymentMethods() {
                     <div className='text-orange text-20 font-semibold leading-120'>Методы оплаты</div>
                     <div className='leading-150'>Вы пока не добавили способ оплаты. Нажмите кнопку ниже, чтобы добавить первый способ оплаты</div>
                 </div>
-                <div className='w-full grid grid-cols-3 gap-20'>
+                <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20'>
                         <Method name='7461 2412 9481 2456' expires='02/24' />
-                    <div className='w-full h-[120px] flex flex-col items-center justify-center rounded bg-bg'>
+                    <div className='w-full p-20 flex flex-col items-center justify-center rounded bg-bg gap-10'>
                         <img className='w-[40px]' src='images/icons/plus.svg' alt='add new' />
-                        <div className='leading-150'>Добавить новый способ оплаты</div>
+                        <div className='leading-150 text-center'>Добавить новый способ оплаты</div>
                     </div>
                 </div>
             </div>
-            <div className='mt-[100px] w-full flex flex-col gap-20'>
-                <div className='flex gap-10'>
+            <div className='mt-20 w-full flex flex-col gap-20'>
+                <div className='flex gap-10 items-center'>
                     <Arrow />
                     <div>Назад</div>
                 </div>

@@ -19,7 +19,7 @@ export default function Sidebar({ active }: { active: 'sim' | 'id' | 'co' | 'bag
                     <Button active={active == 'bag'} icon='bag' heading='Мои заказы' />
                 </div>
             </div>
-                <div className='flex p-[12px] items-center justify-center gap-10 rounded bg-[#E1E5EC]'>
+            <div className='flex p-[12px] items-center justify-center gap-10 rounded bg-[#E1E5EC]'>
                 <div className='font-semibold'>Выйти</div>
                 <img className='w-[16px]' src='images/icons/exit.svg' alt='exit' />
             </div>

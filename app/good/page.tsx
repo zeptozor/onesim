@@ -5,6 +5,7 @@ import Info from "@/components/Good/Info";
 import Map from "@/components/Good/Map";
 import Reviews from "@/components/Good/Reviews";
 import Feedback from "@/components/Home/Feedback";
+import MobileMenu from "@/components/MobileMenu";
 import Nav from "@/components/Nav";
 import Questions from "@/components/Questions";
 import WhyUs from "@/components/WhyUs";
@@ -12,17 +13,38 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Good() {
     return (
-        <Wrapper pb='226px'>
-            <Nav />
-            <Breadcrump crumps={['Главная', 'Самые популярные', 'Региональные eSIM', 'eSIM для Европы']} />
-            <Info id='europe' />
-            <Map />
-            <HowDoesItWork region='europe' />
-            <WhyUs region='для Европы' />
-            <Questions />
-            <Feedback />
-            <Reviews />
-            <Footer />
-        </Wrapper>
+        <div className='pb-[256px] md:pb-0'>
+            <Wrapper>
+                <Nav />
+            </Wrapper>
+            <Wrapper>
+                <Breadcrump crumps={['Главная', 'Самые популярные', 'Региональные eSIM', 'eSIM для Европы']} />
+            </Wrapper>
+            <Wrapper>
+                <Info id='europe' />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Map />
+            </Wrapper>
+            <Wrapper>
+                <HowDoesItWork region='europe' />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <WhyUs region='для Европы' />
+            </Wrapper>
+            <Wrapper>
+                <Questions />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Feedback />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Reviews />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Footer />
+            </Wrapper>
+            <MobileMenu />
+        </div>
     )
 }

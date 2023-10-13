@@ -61,23 +61,25 @@ export default function Map() {
     ]
 
     return (
-        <div className='w-full h-[1359px] sm:h-auto px-20 sm:px-40 md:px-80 py-40 bg-bg flex flex-col sm:flex-row gap-20'>
-            <div className='sm:w-4/5 flex flex-col gap-y-20'>
-                <div className='text-28 font-semibold leading-120'>Покрывает не только Европу, но и даже больше</div>
-                <div className='text-gray leading-120'>Скорость и покрытие зависят от оператора и доступности сети</div>
-                <div className='w-full grid md:grid-cols-3 grid-cols-2 gap-y-10 gap-x-20'>
-                    {
-                        countries.map((c, index) => <Country key={index} name={c.name} five={c.five} />)
-                    }
+        <div className='w-full bg-bg'>
+            <div className='w-full max-w-[1500px] mx-auto h-[1359px] sm:h-auto px-20 sm:px-40 md:px-80 py-40 flex flex-col sm:flex-row gap-20'>
+                <div className='sm:w-4/5 flex flex-col gap-y-20'>
+                    <div className='text-28 font-semibold leading-120'>Покрывает не только Европу, но и даже больше</div>
+                    <div className='text-gray leading-120'>Скорость и покрытие зависят от оператора и доступности сети</div>
+                    <div className='w-full grid md:grid-cols-3 grid-cols-2 gap-y-10 gap-x-20'>
+                        {
+                            countries.map((c, index) => <Country key={index} name={c.name} five={c.five} />)
+                        }
+                    </div>
+                    <div className='text-gray leading-120'>Дополнительное покрытие</div>
+                    <div className='w-full grid md:grid-cols-3 grid-cols-2 gap-y-10 gap-x-20'>
+                        {
+                            additionally.map((c, index)=> <Country key={index} name={c.name} five={c.five} />)
+                        }
+                    </div>
                 </div>
-                <div className='text-gray leading-120'>Дополнительное покрытие</div>
-                <div className='w-full grid md:grid-cols-3 grid-cols-2 gap-y-10 gap-x-20'>
-                    {
-                        additionally.map((c, index)=> <Country key={index} name={c.name} five={c.five} />)
-                    }
-                </div>
+                <Europe />
             </div>
-            <Europe />
         </div>
     )
 }

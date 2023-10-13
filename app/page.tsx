@@ -21,7 +21,7 @@ export default function Home() {
       <Wrapper maxw='none'>
         <Head />
       </Wrapper>
-      <Wrapper>
+      <Wrapper maxw='none'>
         <Regions />
       </Wrapper>
       <Wrapper maxw='none'>

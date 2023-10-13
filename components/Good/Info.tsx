@@ -1,8 +1,11 @@
+'use client'
+
+import { useState } from "react";
 import Rate from "./Rate";
 
-function Button({ active, text }: { active: boolean, text: string }) {
+function Button({ active, text, setValue }: { active: boolean, text: string, setValue: any }) {
     return (
-        <div className={`flex px-10 py-[12px] items-center justify-center rounded ${ active ? 'bg-orange text-white' : '' } font-semibold`}>{text}</div>
+        <div className={`flex px-10 py-[12px] items-center justify-center rounded ${ active ? 'bg-orange text-white' : '' } font-semibold`} onClick={setValue}>{text}</div>
     )
 }
 
@@ -37,9 +40,10 @@ function Method({ icon }: { icon: string }) {
 }
 
 export default function Info({ id }: { id: string }) {
+    const [info, setInfo] = useState<'features' | 'description' | 'operators'>('features')
     return (
         <div className='w-full px-20 sm:px-40 md:px-80 flex flex-col md:flex-row gap-20'>
-            <div className='block sm:hidden md:block w-full sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
+            <div className='block sm:hidden md:block w-full sm:max-w-[389px] sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
                 <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
             </div>
             <div className='flex flex-col gap-20'>
@@ -47,9 +51,14 @@ export default function Info({ id }: { id: string }) {
                     <div className='hidden sm:block md:hidden sm:w-[389px] w-full sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
                         <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
                     </div>
-                    <div className='flex flex-col gap-20'>
-                        <div className='text-28 font-semibold leading-120'>eSIM для Европы</div>
-                        <div>
+                    <div className='w-full flex flex-col md:flex-row md:justify-between gap-20'>
+                        <div className='flex flex-col gap-20'>
+                            <div className='text-28 font-semibold leading-120'>eSIM для Европы</div>
+                            <div className='hidden md:block'>
+                                <Rate rate={4} />
+                            </div>
+                        </div>
+                        <div className='md:hidden'>
                             <div className='flex items-end'>
                                 <div className='text-green text-36 font-semibold leading-120 mx-[5px]'>$3.90</div>
                                 <div className='font-semibold leading-120'>USD</div>
@@ -57,59 +66,65 @@ export default function Info({ id }: { id: string }) {
                             <div className='text-red font-semibold leading-120 line-through'>$4.90</div>
                             <Rate rate={4} />
                         </div>
-                        <div className='hidden sm:flex md:hidden w-auto p-[5px] gap-10 items-center flex-wrap rounded'>
-                            <Button active={true} text='Особенности' />
-                            <Button active={false} text='Описание' />
-                            <Button active={false} text='Операторы' />
+                        <div className='hidden md:flex gap-5 items-end'>
+                            <div className='text-red font-semibold leading-120 line-through'>$4.90</div>
+                            <div className='text-green text-36 font-semibold leading-120 mx-[5px]'>$3.90</div>
+                            <div className='font-semibold leading-120'>USD</div>
                         </div>
                     </div>
                 </div>
-                <div className='w-full h-[2px] mt-20 bg-[#E1E5EC]'></div>
-                <div className='flex sm:hidden md:flex w-full md:w-1/2 p-[5px] justify-between items-center flex-wrap rounded bg-bg'>
-                    <Button active={true} text='Особенности' />
-                    <Button active={false} text='Описание' />
-                    <Button active={false} text='Операторы' />
+                <div className='w-full h-[2px] bg-[#E1E5EC]'></div>
+                <div className='flex w-full sm:max-w-max gap-20 p-[5px] justify-between items-center flex-wrap rounded bg-bg'>
+                    <Button active={info == 'features'} text='Особенности' setValue={() => setInfo('features')} />
+                    <Button active={info == 'description'} text='Описание' setValue={() => setInfo('description')} />
+                    <Button active={info == 'operators'} text='Операторы' setValue={() => setInfo('operators')} />
                 </div>
-                <div className='w-full flex flex-col gap-20 mt-40'>
-                    <Feature icon='wifi' text='eSIM для Европы с наилучшим покрытием' />
-                    <Feature icon='verified' text='Простая настройка без регистрации' />
-                    <Feature icon='stonks' text='1ГБ, 3ГБ, 5ГБ или 10ГБ скорости 4G/5G' />
-                    <Feature icon='globe' text='Работает сразу в нескольких странах' />
-                    <div className='font-semibold leading-120'>После покупки вы немедленно получите электронное письмо с eSIM и с инструкцией по настройке QR</div>
-                </div>
-                <div className='w-full mt-40 leading-150'>
-                    eSIM для Европы позволяет подключиться к Интернету в этом пункте назначения за считанные минуты. Наслаждайтесь неограниченным объемом данных на скорости 3G/4G/LTE/5G в более чем 32 европейских странах. Забудьте о роуминге или поиске SIM-карт в аэропортах, вы получаете eSIM сразу после покупки. Используйте свои любимые приложения, чтобы звонить всем своим друзьям и семье, такие как WhatsApp или iMessage, без ограничений.
-                </div>
-                <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
-                    <div className='text-28 font-semibold leading-120'>Операторы в странах</div>
-                    <div className='text-gray leading-120'>Скорость и покрытие зависят от оператора и доступности сети</div>
-                    <table className='w-full border-collapse'>
-                        <thead>
-                            <tr className='leading-120 font-semibold border-t-2 border-t-[#E1E5EC]'>
-                                <td className='py-10'>Страна</td>
-                                <td>Операторы</td>
-                                <td>Поддержка 5G</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
-                                <td className='py-10'>Австрия</td>
-                                <td className='py-10'>Magenta</td>
-                                <td>-</td>
-                            </tr>
-                            <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
-                                <td className='py-10'>Бельгия</td>
-                                <td className='py-10'>Orange, Base</td>
-                                <td>5G</td>
-                            </tr>
-                            <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
-                                <td className='py-10'>Болгария</td>
-                                <td className='py-10'>mtel (Mobiltel EAD), Telenor, Vivacom</td>
-                                <td>5G</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                {
+                    info == 'features' ? (
+                        <div className='w-full flex flex-col gap-20 mt-40'>
+                            <Feature icon='wifi' text='eSIM для Европы с наилучшим покрытием' />
+                            <Feature icon='verified' text='Простая настройка без регистрации' />
+                            <Feature icon='stonks' text='1ГБ, 3ГБ, 5ГБ или 10ГБ скорости 4G/5G' />
+                            <Feature icon='globe' text='Работает сразу в нескольких странах' />
+                            <div className='font-semibold leading-120 flex gap-10'><img className='w-[20px]' src='images/icons/mail.svg' alt='mail' />После покупки вы немедленно получите электронное письмо с eSIM и с инструкцией по настройке QR</div>
+                        </div>
+                    ) : info == 'description' ? (
+                        <div className='w-full mt-40 leading-150'>
+                            eSIM для Европы позволяет подключиться к Интернету в этом пункте назначения за считанные минуты. Наслаждайтесь неограниченным объемом данных на скорости 3G/4G/LTE/5G в более чем 32 европейских странах. Забудьте о роуминге или поиске SIM-карт в аэропортах, вы получаете eSIM сразу после покупки. Используйте свои любимые приложения, чтобы звонить всем своим друзьям и семье, такие как WhatsApp или iMessage, без ограничений.
+                        </div>
+                    ) : (
+                        <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
+                            <div className='text-28 font-semibold leading-120'>Операторы в странах</div>
+                            <div className='text-gray leading-120'>Скорость и покрытие зависят от оператора и доступности сети</div>
+                            <table className='w-full border-collapse'>
+                                <thead>
+                                    <tr className='leading-120 font-semibold border-t-2 border-t-[#E1E5EC]'>
+                                        <td className='py-10'>Страна</td>
+                                        <td>Операторы</td>
+                                        <td>Поддержка 5G</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
+                                        <td className='py-10'>Австрия</td>
+                                        <td className='py-10'>Magenta</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
+                                        <td className='py-10'>Бельгия</td>
+                                        <td className='py-10'>Orange, Base</td>
+                                        <td>5G</td>
+                                    </tr>
+                                    <tr className='leading-120 border-t-2 border-t-[#E1E5EC]'>
+                                        <td className='py-10'>Болгария</td>
+                                        <td className='py-10'>mtel (Mobiltel EAD), Telenor, Vivacom</td>
+                                        <td>5G</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    )
+                }
                 <div className='w-full h-[2px] mt-40 bg-[#E1E5EC]'></div>
                 <div className='py-20 flex flex-col gap-20'>
                     <div className='flex w-full p-20 flex-col gap-10 rounded bg-bg'>

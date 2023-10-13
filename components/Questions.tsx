@@ -1,6 +1,10 @@
-function Question({ question, answer, active }: { question: string, answer: string, active: boolean }) {
+'use client'
+
+import { useState } from "react"
+
+function Question({ question, answer, active, open }: { question: string, answer: string, active: boolean, open: any }) {
     return (
-        <div className='w-full p-20 flex flex-col gap-20 sm:gap-20 rounded bg-bg'>
+        <div className='w-full p-20 flex flex-col gap-20 sm:gap-20 rounded bg-bg' onClick={open}>
             <div className='flex w-full justify-between'>
                 <div className={`${ active ? 'text-orange' : '' } font-semibold leading-120 sm:leading-100`}>{question}</div>
                 <div className='w-[6px] h-[3px]'>
@@ -15,14 +19,15 @@ function Question({ question, answer, active }: { question: string, answer: stri
 }
 
 function QuestionsList() {
+    const [opened, setOpened] = useState(0)
     return (
         <div className='flex flex-col gap-10'>
-            <Question question='Я сделал заказ. Когда я получу eSIM?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={true} />
-            <Question question='Когда начинается действие плана eSIM?' answer='' active={false} />
-            <Question question='Как проверить, разблокирован ли мой телефон от оператора?' answer='' active={false} />
-            <Question question='Как осуществлять звонки с eSIM?' answer='' active={false} />
-            <Question question='Могу ли я продлить тариф eSIM после истечения срока его действия?' answer='' active={false} />
-            <Question question='Могу ли я удалить и переустановить свой тарифный план eSIM?' answer='' active={false} />
+            <Question question='Я сделал заказ. Когда я получу eSIM?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 0} open={() => setOpened(0)} />
+            <Question question='Когда начинается действие плана eSIM?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 1} open={() => setOpened(1)} />
+            <Question question='Как проверить, разблокирован ли мой телефон от оператора?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 2} open={() => setOpened(2)} />
+            <Question question='Как осуществлять звонки с eSIM?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 3} open={() => setOpened(3)} />
+            <Question question='Могу ли я продлить тариф eSIM после истечения срока его действия?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 4} open={() => setOpened(4)} />
+            <Question question='Могу ли я удалить и переустановить свой тарифный план eSIM?' answer='При покупке eSIM в Onesim вы сразу же получите QR-код eSIM и все необходимые инструкции по его загрузке и использованию. Если вы не получили eSIM в течение 10 минут, пожалуйста, сначала проверьте папку "Спам", а затем свяжитесь с нами по адресу hello@onesim.co' active={opened == 5} open={() => setOpened(5)} />
         </div>
     )
 }

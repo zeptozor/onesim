@@ -44,7 +44,7 @@ export function ContactData({ width }: { width: string }) {
     return (
         <div className='flex flex-col gap-10' style={{ width }}>
             <div className='flex flex-col gap-10 w-full'>
-                <div className='flex flex-col sm:flex-row gap-10'>
+                <div className='flex gap-10'>
                     <Field active={true} label='Имя' value='Шыңғысхан' />
                     <Field active={false} label='Фамилия' value='Армия' />
                 </div>
@@ -55,7 +55,7 @@ export function ContactData({ width }: { width: string }) {
                 </div>
             </div>
             <div className='flex flex-col gap-10 w-full justify-between'>
-                <div className='w-full flex flex-col sm:flex-row gap-20'>
+                <div className='w-full flex gap-20'>
                     <Choise variants={countries} />
                     <Field active={false} label='Телефон' value='(707) 777 6943' />
                 </div>
@@ -68,10 +68,16 @@ export function ContactData({ width }: { width: string }) {
 
 export default function Profile() {
     return (
-        <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
-            <div className='text-20 font-semibold'>Личная информация</div>
-            <ContactData width='auto' />
-            <div className='w-full p-[12px] flex items-center justify-center rounded bg-[#E1E5EC] text-gray font-semibold'>Сохранить</div>
+        <div className='flex flex-col w-full gap-20'>
+            <div className='w-full flex flex-col gap-20 p-20 rounded bg-bg'>
+                <div className='text-20 font-semibold'>Личная информация</div>
+                <ContactData width='auto' />
+                <div className='w-full p-[12px] flex items-center justify-center rounded bg-[#E1E5EC] text-gray font-semibold'>Сохранить</div>
+            </div>
+            <div className='sm:hidden w-full flex p-[12px] items-center justify-center gap-10 rounded bg-[#E1E5EC]'>
+                <div className='font-semibold'>Выйти</div>
+                <img className='w-[16px]' src='images/icons/exit.svg' alt='exit' />
+            </div>
         </div>
     )
 }

@@ -5,7 +5,7 @@ import Person from './svg/Person'
 
 export default function Nav() {
     return (
-        <div className='w-full max-w-[1500px] w-full flex md:gap-40 px-20 sm:px-40 md:px-80 py-20 items-center justify-between'>
+        <div className='max-w-[1500px] w-full flex md:gap-40 px-20 sm:px-40 md:px-80 py-20 items-center justify-between'>
             <div className='hidden h-[50px] md:flex gap-40 items-center'>
                 <Link className='h-full flex items-center' href='/'><span className='h-1/2 text-32 leading-[15px] font-bold'>onesim</span></Link>
                 <div className='flex h-full gap-20 justify-center items-center'>
