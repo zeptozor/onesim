@@ -5,11 +5,11 @@ import Person from './svg/Person'
 
 export default function Nav() {
     return (
-        <div className='w-full flex md:gap-40 px-20 sm:px-40 md:px-80 py-20 items-center justify-center'>
-            <div className='hidden md:flex gap-40 justify-center items-center'>
-                <Link className='text-32 font-semibold' href='/'>onesim</Link>
-                <div className='flex gap-20 justify-center items-center'>
-                    <div className='flex gap-10 items-center justify-center cursor-pointer'>
+        <div className='w-full max-w-[1500px] w-full flex md:gap-40 px-20 sm:px-40 md:px-80 py-20 items-center justify-between'>
+            <div className='hidden h-[50px] md:flex gap-40 items-center'>
+                <Link className='h-full flex items-center' href='/'><span className='h-1/2 text-32 leading-[15px] font-bold'>onesim</span></Link>
+                <div className='flex h-full gap-20 justify-center items-center'>
+                    <div className='flex h-full gap-10 items-center justify-center cursor-pointer'>
                         <div className='font-semibold hover:text-blue text-15'>Направления</div>
                         <div className='w-[6px] h-[3px]'>
                             <Arrow />

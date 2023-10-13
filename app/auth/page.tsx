@@ -11,9 +11,9 @@ export default function Auth() {
                 <div className='w-full h-full px-20 sm:px-40 md:px-80 flex items-center justify-center'>
                     <AuthForm />
                 </div>
-            </div>
-            <div className='w-full hidden md:block'>
-                <Footer />
+                <div className='w-full hidden md:block'>
+                    <Footer />
+                </div>
             </div>
         </Wrapper>
     )

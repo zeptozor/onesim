@@ -1,8 +1,8 @@
 export default function Feedback() {
     return (
-        <div className='px-20 sm:px-40 md:px-80 pb-40'>
-            <div className='w-full h-[438px] relative sm:h-[253px] rounded-10 bg-bg'>
-                <div className='hidden sm:flex w-full h-full justify-end items-end absolute top-0'>
+        <div className='w-full bg-bg mb-40'>
+            <div className='w-full max-w-[1500px] mx-auto h-[438px] relative sm:h-[253px] rounded'>
+                <div className='hidden sm:flex w-full h-full justify-center items-end absolute top-0'>
                     <img src='images/feedback/feedback.svg' />
                 </div>
                 <div className='sm:hidden w-full h-full flex pl-10 items-end absolute bottom-0'>

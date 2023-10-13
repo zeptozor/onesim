@@ -5,4 +5,27 @@
 * {
     font-family: 'TildaSansRegular';
     font-size: 16px;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+progress {
+    @apply w-full rounded bg-[#E1E5EC] appearance-none h-full text-orange
+
+}
+
+progress::-moz-progress-bar {
+    @apply rounded bg-orange
+}
+
+progress::-webkit-progress-bar {
+    @apply rounded bg-[#E1E5EC]
+}
+
+progress::-webkit-progress-value {
+    @apply rounded bg-orange
 }

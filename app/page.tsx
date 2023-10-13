@@ -13,18 +13,40 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Home() {
   return (
-    <Wrapper>
-      <Nav />
-      <Head />
-      <Regions />
-      <Advantages />
-      <Offers />
-      <WhyUs />
-      <HowDoesItWork />
-      <PaymentMethods />
-      <Questions />
-      <Feedback />
-      <Footer />
-    </Wrapper>
+    <div>
+      <Wrapper>
+        <Nav />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <Head />
+      </Wrapper>
+      <Wrapper>
+        <Regions />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <Advantages />
+      </Wrapper>
+      <Wrapper>
+        <Offers />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <WhyUs />
+      </Wrapper>
+      <Wrapper>
+        <HowDoesItWork />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <PaymentMethods />
+      </Wrapper>
+      <Wrapper>
+        <Questions />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <Feedback />
+      </Wrapper>
+      <Wrapper maxw='none'>
+        <Footer />
+      </Wrapper>
+    </div>
   )
 }

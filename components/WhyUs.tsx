@@ -12,15 +12,17 @@ function Reason({ icon, heading, description }: { icon: string, heading: string,
 
 export default function WhyUs({ region }: { region?: string }) {
     return (
-        <div className='w-full py-40 px-20 sm:px-40 md:px-80 bg-bg'>
-            <div className='font-semibold text-28 sm:text-36 mb-[20px] sm:mb-[40px] leading-120'>Почему стоит выбрать нашу туристическую eSIM {region}</div>
-            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20'>
-                <Reason icon='wifi' heading='Быстрый 4G/5G' description='Быстрый 4G/5G' />
-                <Reason icon='qr' heading='Активация по QR-коду' description='Вышлем QR-код сразу после оплаты' />
-                <Reason icon='co' heading='Без скрытых платежей' description='Платите только за трафик. Если он закончится, можете купить новый пакет' />
-                <Reason icon='bag' heading='Предоплаченный пакет' description='Отсутствие кредитного договора и автоматического продления' />
-                <Reason icon='globe' heading='Работает в нескольких странах' description='Наши региональные пакеты работают в нескольких странах' />
-                <Reason icon='id' heading='Без загрузки документов' description='Вам не нужно предоставлять документы, удостоверяющие личность' />
+        <div className='w-full bg-bg'>
+            <div className='w-full max-w-[1500px] mx-auto py-40 px-20 sm:px-40 md:px-80'>
+                <div className='font-semibold text-28 sm:text-36 mb-[20px] sm:mb-[40px] leading-120'>Почему стоит выбрать нашу туристическую eSIM {region}</div>
+                <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20'>
+                    <Reason icon='wifi' heading='Быстрый 4G/5G' description='Быстрый 4G/5G' />
+                    <Reason icon='qr' heading='Активация по QR-коду' description='Вышлем QR-код сразу после оплаты' />
+                    <Reason icon='co' heading='Без скрытых платежей' description='Платите только за трафик. Если он закончится, можете купить новый пакет' />
+                    <Reason icon='bag' heading='Предоплаченный пакет' description='Отсутствие кредитного договора и автоматического продления' />
+                    <Reason icon='globe' heading='Работает в нескольких странах' description='Наши региональные пакеты работают в нескольких странах' />
+                    <Reason icon='id' heading='Без загрузки документов' description='Вам не нужно предоставлять документы, удостоверяющие личность' />
+                </div>
             </div>
         </div>
     )

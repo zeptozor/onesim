@@ -55,7 +55,8 @@ const config: Config = {
       },
       screens: {
         'sm': '768px',
-        'md': '1024px'
+        'md': '1024px',
+        'lg': '1500px'
       }
     },
     lineHeight: {

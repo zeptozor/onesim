@@ -13,7 +13,7 @@ interface StepProps {
 
 function Step({ heading, description, justify, additionally, illustration, width, top }: StepProps) {
     return (
-        <div className={`w-full pl-[32px] sm:px-40 md:px-80 sm:absolute sm:ml-0 flex sm:flex-col items-end ${justify == 'start' ? 'sm:items-start' : 'sm:items-end'} gap-20 `} style={{ marginTop: top.mobile, top: top.desktop }}>
+        <div className={`w-full pl-[32px] sm:absolute flex sm:flex-col items-end ${justify != 'start' ? 'sm:items-start sm:pl-[calc(50%+30px)] md:pl-[calc(50%+100px)]' : 'sm:items-end sm:pr-[calc(50%+30px)] md:pr-[calc(50%+100px)]'} gap-20 `} style={{ marginTop: top.mobile, top: top.desktop }}>
             <div className='w-[230px] sm:w-[280px] flex flex-col gap-10 text-start'>
                 <div className='text-20 sm:text-28 font-semibold leading-120'>{heading}</div>
                 <div className='text-gray leading-120'>{description}</div>
@@ -77,7 +77,7 @@ export default function HowDoesItWork() {
             </div>
             <div className='w-full'>
                 <div className='w-full max-w-[400px] sm:max-w-none mx-auto relative sm:h-[1320px]'>
-                    <div className='w-0 flex flex-col items-center border border-gray sm:left-1/2 absolute top-[60px] sm:top-[35px] z-10'>
+                    <div className='w-0 flex flex-col items-center border  border-gray sm:left-1/2 absolute top-[60px] sm:top-[35px] z-10'>
                         <div className='w-[12px] h-[12px] mb-[130px] sm:mb-[300px] bg-orange rounded-full'></div>
                         <div className='w-[12px] h-[12px] mb-[255px] sm:mb-[350px] bg-orange rounded-full'></div>
                         <div className='w-[12px] h-[12px] mb-[178px] sm:mb-[250px] bg-orange rounded-full'></div>
