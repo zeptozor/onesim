@@ -35,7 +35,7 @@ export default function Regions() {
     ]
 
     return (
-        <div className='w-full px-20 sm:px-40 md:px-80 py-40 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-40 sm:gap-20'>
+        <div className='w-full px-20 sm:px-40 md:px-80 py-20 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-40 sm:gap-20'>
             {
                 regions.map((i, index) => <Region key={index} region={i.region} forRegion={i.forRegion} price={i.price} categories={i.categories} width='100%' />)
             }

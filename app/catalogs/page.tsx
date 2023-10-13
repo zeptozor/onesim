@@ -7,12 +7,22 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Catalogs() {
     return (
-        <Wrapper>
-            <Nav />
-            <Head />
-            <Breadcrump crumps={['Главная', 'Самые популярные']} />
-            <Regions />
-            <Footer />
-        </Wrapper>
+        <div className='pb-[50px] md:pb-0'>
+            <Wrapper>
+                <Nav />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Head />
+            </Wrapper>
+            <Wrapper>
+                <Breadcrump crumps={['Главная', 'Самые популярные']} />
+            </Wrapper>
+            <Wrapper>
+                <Regions />
+            </Wrapper>
+            <Wrapper maxw='none'>
+                <Footer />
+            </Wrapper>
+        </div>
     )
 }
