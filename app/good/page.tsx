@@ -12,7 +12,7 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Good() {
     return (
-        <Wrapper>
+        <Wrapper pb='226px'>
             <Nav />
             <Breadcrump crumps={['Главная', 'Самые популярные', 'Региональные eSIM', 'eSIM для Европы']} />
             <Info id='europe' />

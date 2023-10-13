@@ -130,7 +130,7 @@ export default function Info({ id }: { id: string }) {
                         <Plan active={false} traffic={10} duration={30} price={16.90} available={false} />
                         <Plan active={false} traffic={20} duration={30} price={29.90} available={false} />
                     </div>
-                    <div className='grid grid-cols-5 w-full sm:hidden p-20 gap-[13px] rounded bg-bg'>
+                    <div className='grid grid-cols-5 w-full md:hidden p-20 gap-[13px] rounded bg-bg'>
                         <Method icon='stripe' />
                         <Method icon='visa' />
                         <Method icon='mastercard' />
@@ -142,16 +142,22 @@ export default function Info({ id }: { id: string }) {
                         <Method icon='googlepay' />
                         <Method icon='applepay' />
                     </div>
-                    <div className='hidden w-full sm:flex p-20 flex-wrap gap-y-20 rounded bg-bg'>
-                        <div className='w-full flex justify-between items-start'>
-                            <div className='w-full h-[62px] flex flex-col'>
-                                <div className='text-gray font-semibold leading-120'>Итого</div>
-                                <div className='text-green text-36 font-semibold leading-120 flex items-end gap-10'>
-                                    $3.90
-                                    <div className='leading-120 font-semibold'>USD</div>
+                    <div className='md:static z-50 fixed left-0 bottom-[50px] w-full flex p-20 flex-wrap gap-y-20 rounded bg-bg'>
+                        <div className='w-full flex gap-20 md:gap-0 flex-col md:flex-row justify-between items-start'>
+                            <div className='w-full flex justify-between'>
+                                <div className='flex flex-col gap-5'>
+                                    <div className='text-gray font-semibold leading-120'>Итого</div>
+                                    <div className='text-green text-36 font-semibold leading-120 flex items-end gap-10'>
+                                        $3.90
+                                        <div className='leading-120 font-semibold'>USD</div>
+                                    </div>
+                                </div>
+                                <div className='flex md:hidden gap-10 flex-col'>
+                                    <div className='text-[14px] sm:text-[16px] font-semibold leading-120'>Всего трафика: 1 ГБ</div>
+                                    <div className='text-gray sm:text-[16px] text-[14px] leading-120'>Срок действия: 7 дней</div>
                                 </div>
                             </div>
-                            <div className='flex w-[368px] p-[12px] justify-center items-center gap-10 rounded bg-green'>
+                            <div className='flex w-full md:w-[368px] p-[12px] justify-center items-center gap-10 rounded bg-green'>
                                 <div className='w-[18px] h-[16px]'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
                                         <path d="M7 5C7 6.65685 8.34315 8 10 8C11.6569 8 13 6.65685 13 5M19 4.19995V13.8C19 14.9201 19.0002 15.4802 18.7822 15.908C18.5905 16.2844 18.2841 16.5902 17.9078 16.782C17.48 17 16.9203 17 15.8002 17H4.2002C3.08009 17 2.51962 17 2.0918 16.782C1.71547 16.5902 1.40973 16.2844 1.21799 15.908C1 15.4802 1 14.9201 1 13.8V4.19995C1 3.07985 1 2.51986 1.21799 2.09204C1.40973 1.71572 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.48 1 17.9078 1.21799C18.2841 1.40973 18.5905 1.71572 18.7822 2.09204C19.0002 2.51986 19 3.07985 19 4.19995Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -160,7 +166,7 @@ export default function Info({ id }: { id: string }) {
                                 <div className='font-semibold text-white'>Купить</div>
                             </div>
                         </div>
-                        <div className='sm:grid grid-cols-5 md:flex w-full flex-wrap justify-between gap-5'>
+                        <div className='hidden md:grid grid-cols-5 w-full flex-wrap justify-between gap-5'>
                             <Method icon='stripe' />
                             <Method icon='visa' />
                             <Method icon='mastercard' />
