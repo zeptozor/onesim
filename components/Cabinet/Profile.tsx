@@ -44,7 +44,7 @@ export function ContactData({ width }: { width: string }) {
     return (
         <div className='flex flex-col gap-10' style={{ width }}>
             <div className='flex flex-col gap-10 w-full'>
-                <div className='flex gap-10'>
+                <div className='flex flex-col sm:flex-row gap-10'>
                     <Field active={true} label='Имя' value='Шыңғысхан' />
                     <Field active={false} label='Фамилия' value='Армия' />
                 </div>
@@ -55,11 +55,11 @@ export function ContactData({ width }: { width: string }) {
                 </div>
             </div>
             <div className='flex flex-col gap-10 w-full justify-between'>
-                <div className='w-full flex gap-20'>
+                <div className='w-full flex flex-col sm:flex-row gap-20'>
                     <Choise variants={countries} />
                     <Field active={false} label='Телефон' value='(707) 777 6943' />
                 </div>
-                <Choise variants={[{ name: 'Казахстан', id: 'default' }]} />
+                <Choise variants={[{ name: 'Страна / Регион', id: 'default' }]} />
                 <Choise variants={[{ name: 'Ваш смартфон', id: 'default' }]} />
             </div>
         </div>
