@@ -1,6 +1,6 @@
 export default function Breadcrump({ crumps }: { crumps: string[] }) {
     return (
-        <div className='w-full flex-wrap h-[16px] px-20 sm:px-80 flex gap-10 mb-20'>
+        <div className='w-full flex-wrap px-20 sm:px-40 md:px-80 flex gap-10 mb-20'>
             {
                 crumps.map((i, index) => {
                     return (
