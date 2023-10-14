@@ -3,7 +3,7 @@ import Rate from "./Rate"
 
 function Review({ name, rate, description }: { name: string, rate: number, description: string }) {
     return (
-        <div className='flex w-[300px] sm:w-[389px] p-20 flex-col gap-20 bg-bg rounded'>
+        <div className='flex min-w-[300px] max-w-[300px] w-full sm:min-w-[389px] sm:max-w-[389px] p-20 flex-col gap-20 bg-bg rounded'>
             <div className='flex gap-20 w-full'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
                     <circle cx="26.5" cy="26.5" r="26.5" fill="#D9D9D9"/>
@@ -26,8 +26,8 @@ export default function Reviews() {
             <div className='w-full max-w-[1500px] mx-auto mb-20'>
                 <div className='pl-20 sm:pl-40 md:pl-80 text-28 font-semibold leading-120'>Сотни счастливых клиентов eSIM</div>
             </div>
-            <div className='md:pl-80 lg:pl-[calc(50%-750px+80px)] pl-20 sm:pl-40'>
-                <Carousel items={[1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => <Review key={i} name='Никита Григориевич' rate={4} description='Я купил электронную туристическую симкарту на этом сайте перед поездкой в Испанию. Я был очень доволен качеством связи и скоростью интернета. Симкарта работала без проблем во всех городах, которые я посетил. Я мог звонить, отправлять сообщения и пользоваться онлайн-сервисами без ограничений.' />)} />
+            <div className='md:pl-80 w-full lg:pl-[calc(50%-750px+80px)] pl-20 sm:pl-40'>
+                <Carousel items={[1, 2, 3, 4, 5].map(i => <Review key={i} name='Никита Григориевич' rate={4} description='Я купил электронную туристическую симкарту на этом сайте перед поездкой в Испанию. Я был очень доволен качеством связи и скоростью интернета. Симкарта работала без проблем во всех городах, которые я посетил. Я мог звонить, отправлять сообщения и пользоваться онлайн-сервисами без ограничений.' />)} />
             </div>
         </div>
     )

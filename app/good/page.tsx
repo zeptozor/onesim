@@ -13,7 +13,7 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Good() {
     return (
-        <div className='pb-[256px] md:pb-0'>
+        <div className='pb-[226px] md:pb-0'>
             <Wrapper>
                 <Nav />
             </Wrapper>
@@ -41,9 +41,7 @@ export default function Good() {
             <Wrapper maxw='none'>
                 <Reviews />
             </Wrapper>
-            <Wrapper maxw='none'>
-                <Footer />
-            </Wrapper>
+            <Footer />
             <MobileMenu active='directions' />
         </div>
     )

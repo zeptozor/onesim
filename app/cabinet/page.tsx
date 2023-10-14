@@ -164,7 +164,7 @@ export default function Caabinet() {
                                 </div>
                                 <div className='font-semibold text-white'>Купить</div>
                             </div>
-                            <div className='flex w-full justify-between gap-10'>
+                            <div className='flex w-full justify-between flex-wrap gap-10'>
                                 <Method icon='stripe' />
                                 <Method icon='visa' />
                                 <Method icon='mastercard' />
@@ -204,11 +204,7 @@ export default function Caabinet() {
                     <MyOrders orders={true} />
                 </div>
             </Wrapper>
-            <Wrapper maxw='none'>
-                <div className='w-full bg-bg'>
-                    <Footer />
-                </div>
-            </Wrapper>
+            <Footer />
             <MobileMenu active='cabinet' />
         </div>
     )

@@ -74,9 +74,7 @@ export default function Devices() {
                     </div>                
                 </div>
             </Wrapper>
-            <Wrapper maxw='none'>
-                <Footer />
-            </Wrapper>
+            <Footer />
         </div>
     )
 }

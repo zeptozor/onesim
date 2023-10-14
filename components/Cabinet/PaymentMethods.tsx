@@ -15,7 +15,7 @@ function Method({ name, expires }: { name: string, expires: string }) {
 
 export function Field({ active, label, value }: { active: boolean, label: string, value?: string }) {
     return (
-        <div className={`w-full rounded border-2 ${active ? 'border-orange' : 'border-[#E1E5EC]'} p-[12px] relative flex`}>
+        <div className={`w-full text-ellipsis rounded border-2 ${active ? 'border-orange' : 'border-[#E1E5EC]'} p-[12px] relative flex`}>
             <input className='w-full h-full outline-none peer text-[14px] bg-inherit' placeholder='' />
             <label className='absolute pointer-events-none text-15 top-auto peer-focus:text-[10px] peer-focus:top-[3px] peer-[&:not(:placeholder-shown)]:top-[3px] peer-[&:not(:placeholder-shown)]:text-[10px]'>{label}</label>
         </div>

@@ -45,9 +45,7 @@ export default function Home() {
       <Wrapper maxw='none'>
         <Feedback />
       </Wrapper>
-      <Wrapper maxw='none'>
-        <Footer />
-      </Wrapper>
+      <Footer />
       <MobileMenu active='home' />
     </div>
   )

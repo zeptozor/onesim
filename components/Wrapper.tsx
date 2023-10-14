@@ -1,6 +1,6 @@
-export default function Wrapper({ children, pb, maxw }: { children: React.ReactNode, pb?: string, maxw?: string }) {
+export default function Wrapper({ children, pb, maxw, className = '' }: { children: React.ReactNode, pb?: string, maxw?: string, className?: string }) {
     return (
-    <div className='flex w-full mx-auto' style={{ maxWidth: (maxw ?? '1500px') }}>
+    <div className={'flex w-full mx-auto ' + className} style={{ maxWidth: (maxw ?? '1500px') }}>
         {children}
     </div>
     )

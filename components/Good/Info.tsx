@@ -43,10 +43,10 @@ export default function Info({ id }: { id: string }) {
     const [info, setInfo] = useState<'features' | 'description' | 'operators'>('features')
     return (
         <div className='w-full px-20 sm:px-40 md:px-80 flex flex-col md:flex-row gap-20'>
-            <div className='block sm:hidden md:block w-full sm:max-w-[389px] sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
+            <div className='sm:hidden md:block w-full sm:w-[389px] sm:max-w-[389px] sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
                 <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
             </div>
-            <div className='flex flex-col gap-20'>
+            <div className='w-full flex flex-col gap-20'>
                 <div className='flex gap-20'>
                     <div className='hidden sm:block md:hidden sm:w-[389px] w-full sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
                         <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
@@ -81,7 +81,7 @@ export default function Info({ id }: { id: string }) {
                 </div>
                 {
                     info == 'features' ? (
-                        <div className='w-full flex flex-col gap-20 mt-40'>
+                        <div className='w-full flex flex-col gap-20'>
                             <Feature icon='wifi' text='eSIM для Европы с наилучшим покрытием' />
                             <Feature icon='verified' text='Простая настройка без регистрации' />
                             <Feature icon='stonks' text='1ГБ, 3ГБ, 5ГБ или 10ГБ скорости 4G/5G' />
@@ -89,7 +89,7 @@ export default function Info({ id }: { id: string }) {
                             <div className='font-semibold leading-120 flex gap-10'><img className='w-[20px]' src='images/icons/mail.svg' alt='mail' />После покупки вы немедленно получите электронное письмо с eSIM и с инструкцией по настройке QR</div>
                         </div>
                     ) : info == 'description' ? (
-                        <div className='w-full mt-40 leading-150'>
+                        <div className='w-full leading-150'>
                             eSIM для Европы позволяет подключиться к Интернету в этом пункте назначения за считанные минуты. Наслаждайтесь неограниченным объемом данных на скорости 3G/4G/LTE/5G в более чем 32 европейских странах. Забудьте о роуминге или поиске SIM-карт в аэропортах, вы получаете eSIM сразу после покупки. Используйте свои любимые приложения, чтобы звонить всем своим друзьям и семье, такие как WhatsApp или iMessage, без ограничений.
                         </div>
                     ) : (
