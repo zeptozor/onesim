@@ -8,7 +8,7 @@ import Wrapper from "@/components/Wrapper";
 
 export default function Catalogs() {
     return (
-        <div>
+        <div className='pb-[50px] md:pb-0'>
             <Wrapper>
                 <Nav />
             </Wrapper>
@@ -24,6 +24,7 @@ export default function Catalogs() {
             <Wrapper maxw='none'>
                 <Footer />
             </Wrapper>
+            <MobileMenu active='directions' />
         </div>
     )
 }

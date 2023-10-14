@@ -14,8 +14,7 @@ interface Country {
 
 function Europe() {
   return (
-    <div className='w-full h-[600px] bg-black'>
-    </div>
+    <div className='w-full h-[600px] bg-black'></div>
   )
 }
 

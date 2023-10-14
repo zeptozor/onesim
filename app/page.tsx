@@ -48,7 +48,7 @@ export default function Home() {
       <Wrapper maxw='none'>
         <Footer />
       </Wrapper>
-      <MobileMenu />
+      <MobileMenu active='home' />
     </div>
   )
 }

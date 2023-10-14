@@ -5,6 +5,7 @@ import PaymentMethods from "@/components/Cabinet/PaymentMethods";
 import Profile from "@/components/Cabinet/Profile";
 import Sidebar from "@/components/Cabinet/Sidebar";
 import Footer from "@/components/Footer";
+import MobileMenu from "@/components/MobileMenu";
 import Nav from "@/components/Nav";
 import Wrapper from "@/components/Wrapper";
 import Arrow from "@/components/svg/Arrow";
@@ -29,7 +30,7 @@ function Method({ icon }: { icon: string }) {
 
 export default function Caabinet() {
     return (
-        <div>
+        <div className='pb-[50px] md:pb-0'>
             <Wrapper>
                 <Nav />
             </Wrapper>
@@ -208,6 +209,7 @@ export default function Caabinet() {
                     <Footer />
                 </div>
             </Wrapper>
+            <MobileMenu active='cabinet' />
         </div>
     )
 }

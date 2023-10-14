@@ -44,7 +44,7 @@ export default function Good() {
             <Wrapper maxw='none'>
                 <Footer />
             </Wrapper>
-            <MobileMenu />
+            <MobileMenu active='directions' />
         </div>
     )
 }
