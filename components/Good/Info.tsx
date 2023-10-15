@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Rate from "./Rate";
+import Switch from "../Switch";
 
 function Button({ active, text, setValue }: { active: boolean, text: string, setValue: any }) {
     return (
@@ -43,7 +44,7 @@ export default function Info({ id }: { id: string }) {
     const [info, setInfo] = useState<'features' | 'description' | 'operators'>('features')
     return (
         <div className='w-full px-20 sm:px-40 md:px-80 flex flex-col md:flex-row gap-20'>
-            <div className='sm:hidden md:block w-full sm:w-[389px] sm:max-w-[389px] sm:min-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
+            <div className='sm:hidden md:block w-full max-w-[389px] relative before:absolute before:content-[""] before:top-0 before:right-0 before:border-t-[80px] before:border-l-[80px] before:border-y-white before:w-0 before:border-l-transparent' style={{ background: `url('../public/images/regions/${id}.png')`, backgroundSize: 'cover' }}>
                 <img className='rounded-3xl' src={`images/regions/${id}.png`} alt='sim' />
             </div>
             <div className='w-full flex flex-col gap-20'>
@@ -74,10 +75,21 @@ export default function Info({ id }: { id: string }) {
                     </div>
                 </div>
                 <div className='w-full h-[2px] bg-[#E1E5EC]'></div>
-                <div className='flex w-full sm:max-w-max gap-20 p-[5px] justify-between items-center flex-wrap rounded bg-bg'>
-                    <Button active={info == 'features'} text='Особенности' setValue={() => setInfo('features')} />
-                    <Button active={info == 'description'} text='Описание' setValue={() => setInfo('description')} />
-                    <Button active={info == 'operators'} text='Операторы' setValue={() => setInfo('operators')} />
+                <div className='max-w-[376px] w-full h-[50px]'>
+                    <Switch options={[
+                        {
+                            label: 'Особенности',
+                            value: 'features'
+                        },
+                        {
+                            label: 'Описание',
+                            value: 'description'
+                        },
+                        {
+                            label: 'Операторы',
+                            value: 'operators'
+                        }
+                    ]} onChange={(newValue: 'features' | 'description' | 'operators') => setInfo(newValue)} />
                 </div>
                 {
                     info == 'features' ? (

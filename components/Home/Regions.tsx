@@ -1,6 +1,7 @@
 import Carousel from "../Carousel"
 import Category from "../Category"
 import Region from "../Region"
+import Switch, { Mobile } from "../Switch"
 
 export default function Regions() {
     const regions = [
@@ -39,15 +40,40 @@ export default function Regions() {
         <div className='w-full mb-40'>
             <div className='w-full max-w-[1500px] mx-auto my-40 px-20 sm:px-40 md:px-80'>
                 <div className='text-28 sm:text-36 font-semibold leading-120'>Куда вы отправитесь в следующий раз?</div>
-                <div className='flex gap-10 sm:gap-20 sm:p-[10px] mt-20 flex-wrap sm:inline-flex sm:justify-center sm:items-center sm:rounded sm:bg-bg'>
-                    <Category active={true} category='Самые популярные' />
-                    <Category active={false} category='Региональные eSIM' />
-                    <Category active={false} category='Локальные eSIMs' />
+                <div className='hidden sm:block w-[530px] h-[50px] mt-20'>
+                    <Switch options={[
+                        {
+                            label: 'Самые популярные',
+                            value: 'popular'
+                        },
+                        {
+                            label: 'Региональные eSIM',
+                            value: 'regional'
+                        },
+                        {
+                            label: 'Локальные eSIMs',
+                            value: 'local'
+                        }
+                    ]} onChange={() => {}} />
+                </div>
+                <div className='sm:hidden w-full mt-20'>
+                    <Mobile options={[
+                        {
+                            label: 'Самые популярные',
+                            value: 'popular'
+                        },
+                        {
+                            label: 'Региональные eSIM',
+                            value: 'regional'
+                        },
+                        {
+                            label: 'Локальные eSIMs',
+                            value: 'local'
+                        }
+                    ]} />
                 </div>
             </div>
-            <div className='md:pl-80 lg:pl-[calc(50%-750px+80px)] pl-20 sm:pl-40'>
-                <Carousel items={regions.map(i => <Region key={i.region} region={i.region} categories={i.categories} forRegion={i.forRegion} price={i.price} />)} />
-            </div>
+            <Carousel items={regions.map(i => <Region key={i.region} region={i.region} categories={i.categories} forRegion={i.forRegion} price={i.price} />)} />
         </div>
     )
 }
