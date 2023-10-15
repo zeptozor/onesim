@@ -1,3 +1,5 @@
+'use client'
+
 import Carousel from "../Carousel"
 import Category from "../Category"
 import Region from "../Region"
